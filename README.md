@@ -1,4 +1,4 @@
-# UFO-Bachelor-Thesis-Template-A-R
+# UFO - Bachelor Thesis Soft
 Adam Lass & Rasmus Helsgaun
 
 * [Task 1 - Bachelor Thesis Requirements](https://github.com/Soft20/UFO-Bachelor-Thesis-Template-A-R/blob/main/Task_2_Bachelor_Thesis_Template.pdf)  
