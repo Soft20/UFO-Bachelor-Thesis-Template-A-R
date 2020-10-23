@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+\usepackage{packages}
+
+\title{Bachelor Thesis Template}
+\author{Pernille Lørup, Stephan D.}
+\date{October 2020}
+\setcounter{page}{0}
+
+\begin{document}
+
+\clearpage\maketitle
+\thispagestyle{empty}
+
+\pagebreak
+\tableofcontents
+
+\section{Graphics}
+
+% reference https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures
+
+\begin{figure}[H]
+  \caption{This is a Caption above \label{figure:cap-above}}
+  \includegraphics[width=\textwidth]{img}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{img}
+  \caption{This is a Caption below  \label{figure:cap-below}}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{justification=centering}
+    \includegraphics[width=.6\textwidth, center]{img}
+    \caption{This is a Caption centered  \label{figure:cap-center}}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+    \includegraphics[width=.6\textwidth, left]{img}
+    \caption{This is a Caption to left  \label{figure:cap-left}}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{justification=raggedleft,singlelinecheck=false}
+    \includegraphics[width=.6\textwidth, right]{img}
+    \caption{This is a Caption to right  \label{figure:cap-right}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img}
+    \caption{Flower one.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img}
+    \caption{Flower two.}
+  \end{minipage}
+  \label{figure:two-beside}
+\end{figure}
+
+\pagebreak
+\section{Image references}
+
+number for figure \ref{figure:cap-center} \\
+page number for figure \pageref{figure:cap-center}
+
+\section{Section}
+
+Hello World!
+
+\subsection{Subsection}
+
+Structuring a document is easy!
+
+\subsubsection{Subsubsection}
+
+More text.
+
+\paragraph{Paragraph}
+\lipsum[1]\\
+
+\subparagraph{Sub Paragraph}
+\lipsum[1]\\
+
+\paragraph{Paragraph}
+\lipsum[1]
+
+\subsection{Another subsection}
+
+\subsection*{Non numeric Section}
+
+\pagebreak
+\section{Lists}
+
+\subsection*{Bullet Points}
+\begin{itemize}
+\item item a
+\item item b
+\item item c
+\item item d
+\end{itemize}
+
+\subsection*{Alternative Points}
+\begin{itemize}
+\item[--] item a
+\item[--] item b
+\item[--] item c
+\item[--] item d
+\end{itemize}
+
+\subsection*{Numbered List}
+\begin{enumerate}
+\item item a
+\item item b
+\item item c
+\item item d
+\end{enumerate}
+
+\subsection*{Alternative Numbered List}
+\begin{enumerate}[I]
+\item item a
+\item item b
+\item item c
+\item item d
+\end{enumerate}
+
+\subsection*{Alternative Numbered List}
+\begin{enumerate}[a.]
+\item item a
+\item item b
+\item item c
+\item item d
+\end{enumerate}
+
+\pagebreak
+
+\section{Tables}
+\subsection{Various horizontal alignments}
+\begin{tabularx}{0.8\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\centering\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ item 1 & item 2 & item 3 \\
+ \hline
+ item 10  & item 20  & item 30  \\
+\hline
+\end{tabularx}
+
+\subsection{Cell spanning}
+
+\subsubsection{Multicolumn}
+\begin{tabular}{|l|l|l|}
+\hline
+first column & second column & third column \\
+\hline
+\multicolumn{3}{|c|}{Cell spanning three columns} \\
+\hline
+\end{tabular}
+
+\subsubsection{Multi row and alignment}
+
+\begin{tabular}{|c|c|}
+\hline
+& A \\
+\cline{2-2}
+& B \\
+\cline{2-2}
+\multirow[c]{-3}[1]{*}{Multi row} & C \bigstrut \\
+\hline
+\end{tabular}
+
+
+\subsection{Description and Labels}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\bfseries Column One & \bfseries Column Two\\
+\hline
+First data & Second data\\ \hline
+\end{tabular}
+\caption{a simple table description}
+\label{table:simple}
+\end{table}
+
+\noindent table number reference \ref{table:simple} \\
+table page reference \pageref{table:simple}
+
+\pagebreak
+
+\section{Code Listing}
+\begin{verbatim}
+
+function foo() {
+    return console.log("Hello Latex!");
+}
+
+foo();
+
+\end{verbatim}
+
+\begin{lstlisting}[language=Python, caption=Python example]
+def foo():
+    return print("Hello Latex!")
+
+foo()
+\end{lstlisting}
+
+\pagebreak 
+
+\section{Bibliography}
+
+This is a referencing text to a book \cite{latexcompanion} \\
+This is an article reference \cite{einstein} \\
+This is a reference to a website \cite{knuthwebsite} \\
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\section{ToDo Notes}
+\todo{Write more to-do examples}
+\todo{Write a lot more to-do examples}
+
+\end{document}
